@@ -1,0 +1,112 @@
+<!Doctype html>
+<html>
+ <head>
+      <meta charset="UTF-8">
+      <title> {{title}} </title>
+	  <style>
+	  #container{
+	  border:2px solid #ddd;
+	  border-radius: 15px;
+	  margin-top:10%;
+	  margin-left:35%;
+	  margin-right:35%;
+	  background-color: #f5f5f5;
+	  box-shadow: 5px 5px #888888;
+	 
+	  }
+	  #main_container{
+	  padding-bottom:10px;
+	  padding-right:10%;
+	  padding-left:15%;
+	  
+	  }
+	 #main_title{
+	 text-align:center;
+	 font-size:25px;
+	 font-weight:bold;
+	 margin-top:20px;
+	 margin-bottom:-20px;
+	 }
+	 #main_title_new{
+	 text-align:center;
+	 font-size:25px;
+	 font-weight:bold;
+	 margin-top:40px;
+	 margin-bottom:0px;
+	 color:red;
+	 }
+	 .btn{
+	 padding: 10px 16px;
+    font-size: 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+	color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+	margin-left:30%;
+}
+
+    input[type=text], select ,input[type=password]{
+    width: 60%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+    #user_message ,#pass_message {
+        display:none;
+        color:red;
+        font-size:15px;
+        text-align: center;
+        margin-bottom: -5px;
+        margin-top: 10px;
+    }
+
+	  </style>
+ </head>
+ <body>
+      <div id="container">
+      <div id="main_title"> {{title }} </div><div id="main_title_new">{{title_new }}</div>
+	  <div id="main_container">
+	  <br>
+      <form action="/check_login" method="post" id="loginForm">
+        <label>Username :</label>
+        <input type="text" placeholder="Enter your Username" id="username" name="username">
+        <br><p id="user_message">Username cannot be empty</p><br>
+        <label>Password :</label>
+        <input type="password" placeholder="Enter your password" id="password" name="password">
+        <br><p id="pass_message">Password cannot be empty</p><br>
+        <button type="button" id="btnSubmit" class="btn">Submit</button>
+     </form>
+ </div><!-- end of main_cointainer-->
+ </div><!-- end of container-->
+ </body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $("#username").on("keyup",function(e){
+        $("#user_message").css("display","none");
+    });
+    $("#password").on("keyup",function(e){
+        $("#pass_message").css("display","none");
+    });
+    $("#btnSubmit").on("click",function(e){
+        if($("#username").val()=="" || $("#username").val()==null){
+            $("#username").focus();
+            $("#user_message").css("display","block");
+        }
+        else if($("#password").val()=="" || $("#password").val()==null){
+            $("#password").focus();
+            $("#pass_message").css("display","block");
+        }
+        else {
+            $("#loginForm").submit();
+        }
+        //alert("hii");
+    });
+</script>
+</html>

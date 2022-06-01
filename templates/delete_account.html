@@ -1,0 +1,73 @@
+{% extends "header.html" %}
+
+{% block content%}
+<style>
+#main_content{
+min-height:428px;
+margin-left:20%;
+padding-top:40px;
+}
+.alignment{
+margin-left:15%;
+}
+padding-top:30px;
+
+</style>
+
+<div id="main_content">
+
+
+<section>
+	<div class="container ">
+		<div class="row">
+		
+		<div class="col-lg-9 alignment" >
+		<h4><b><u>Delete Account</u></b> &nbsp <span style="float:right;">  </span>   </u></b></h4>
+		
+		</div>
+		
+<div style="background:#fff; padding-bottom:15px; padding-top:15px; margin-bottom:20px;" class="oDiv">
+<!--start--->
+<form action="" method="post">
+<div class="col-lg-4 alignment" style="padding-top:10px;">
+	<label>
+		Account id
+	</label>
+	<input type="number"  id="Account_id" value="" class="form-control" placeholder="Enter your customer id"  >
+	<br>
+</div>
+<div style="clear:both;">
+</div>
+<div class="col-lg-4 alignment">
+	<label>
+		Account Type
+	</label>
+	<select class="form-control" id="account_type" disabled>
+	<option value="0">choose any one option</option>
+	<option value="1" selected>Saving Account</option>
+	<option value="2">Current Account</option>
+	</select>
+	<br>
+</div>
+<div style="clear:both;">
+</div>
+
+<div class="col-lg-12">
+	<button class="btn btn-sm btn-success btn_submit alignment" type="submit">submit</button>
+</div>
+
+<div style="clear:both;"></div>
+</form>
+<!--end--->
+</div>
+		
+		
+		
+		
+		</div>
+	</div>
+</section>
+
+</div>
+
+{% endblock %}
